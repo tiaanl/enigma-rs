@@ -1,11 +1,11 @@
 use crate::module::Module;
 use crate::Direction;
 
-pub struct Enigma {
+pub struct Machine {
     modules: Vec<Box<dyn Module>>,
 }
 
-impl Enigma {
+impl Machine {
     pub fn new() -> Self {
         Self {
             modules: Vec::new()

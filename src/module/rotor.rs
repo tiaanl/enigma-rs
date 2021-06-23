@@ -16,19 +16,20 @@ impl RotorModule {
 }
 
 impl Module for RotorModule {
-    fn process(&mut self, input: char, dir: &Direction) -> Option<char> {
+    fn process(&mut self, input: char, _: &Direction) -> Option<char> {
+        /*
+        let input_index = input as usize - 'A' as usize;
+
         let value = match dir {
             Direction::Forward => {
-                let input_index = (input as u32 - 'A' as u32 + self.position) % 26;
-                Some(self.connections[input_index as usize])
+                let index = (input_index + self.position) % 26;
+                Some(self.connections[index])
             }
 
             Direction::Backward => {
-                let input_index = self.connections.iter().enumerate()
-                    .find(|p| )
-
-                let input_index = (input as u32 - 'A' as u32 + self.position) % 26;
-                Some(self.connections[input_index as usize])
+                if let some(found_index) = self.connections.iter().enumerate().find_map(|&p| if p.1 == input { Some(p.0) } else { None }) {
+                    Some(('A' as usize + found_index) as char)
+                }
             }
         };
 
@@ -38,6 +39,8 @@ impl Module for RotorModule {
         }
 
         value
+        */
+        Some(input)
     }
 
     fn reset(&mut self) {}
